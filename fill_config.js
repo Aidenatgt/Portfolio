@@ -1,8 +1,26 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  const res = await fetch("./config.json");
-  const data = await res.json();
+console.log("script loaded");
 
-  document.title = `${data.name}'s Page`;
-  const header = document.getElementById("header");
-  header.innerHTML = `${data.name}'s ${header.innerHTML}`;
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("DOM fully loaded");
+
+  try {
+    const res = await fetch("./config.json");
+    const data = await res.json();
+    console.log("Config loaded:", data);
+
+    async function format_element(element) {
+      for (const format of data.formats) {
+        const pattern = new RegExp(`\\{${format.key}\\}`, "g");
+        element.innerHTML = element.innerHTML.replace(pattern, format.value);
+        console.log(`{${format.key}} replaced with ${format.value}`);
+      }
+    }
+
+    const formatable = Array.from(document.getElementsByClassName("format"));
+    console.log(`${formatable.length} formatable items`);
+
+    await Promise.all(formatable.map(format_element));
+  } catch (err) {
+    console.error("Failed to load config.json:", err);
+  }
 });
