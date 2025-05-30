@@ -1,8 +1,4 @@
-console.log("script loaded");
-
-document.addEventListener("DOMContentLoaded", async () => {
-  console.log("DOM fully loaded");
-
+export default async function fill() {
   try {
     const res = await fetch("./config.json");
     const data = await res.json();
@@ -23,4 +19,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (err) {
     console.error("Failed to load config.json:", err);
   }
-});
+}
