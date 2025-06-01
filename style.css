@@ -1,3 +1,31 @@
-html {
-  background-color: gray;
+body {
+  background-color: orange;
+  font-family: "FiraCode Nerd Font Mono", monospace;
+  color: darkblue;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: blue;
+  color: red;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 3px solid black;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }

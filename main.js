@@ -6,6 +6,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded");
 
   fill();
-
-
 });

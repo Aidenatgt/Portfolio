@@ -2,7 +2,15 @@
   "formats": [
     {
       "key": "name",
-      "value": "Enter Name Here"
+      "value": "[Name]"
+    },
+    {
+      "key": "email",
+      "value": "your@email.com"
+    },
+    {
+      "key": "github",
+      "value": "YourGithub"
     }
   ]
 }

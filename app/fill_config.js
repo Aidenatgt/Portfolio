@@ -15,6 +15,12 @@ export default async function fill() {
     const formatable = Array.from(document.getElementsByClassName("format"));
     console.log(`${formatable.length} formatable items`);
 
+    if (data.background != null)
+      document.documentElement.style.background = data.background;
+
+    if (data.font != null)
+      document.documentElement.style.fontFamily = data.font;
+
     await Promise.all(formatable.map(format_element));
   } catch (err) {
     console.error("Failed to load config.json:", err);
