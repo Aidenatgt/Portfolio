@@ -11,6 +11,10 @@
     {
       "key": "github",
       "value": "YourGithub"
+    },
+    {
+      "key": "github-link",
+      "value": "github.com/YourGithub"
     }
   ]
 }

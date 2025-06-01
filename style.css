@@ -1,21 +1,31 @@
-body {
-  background-color: orange;
-  font-family: "FiraCode Nerd Font Mono", monospace;
-  color: darkblue;
+:root {
+  --header-bg: blue;
+  --header-text: red;
+  --background: orange;
+  --text-color: darkblue;
+  --footer-bg: lightgray;
+  --footer-text: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  background-color: var(--background);
+  font-family: "FiraCode Nerd Font Mono", monospace;
+  color: var(--text-color);
 }
 
 header {
-  background-color: blue;
-  color: red;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   width: 100%;
-  margin: 0;
-  padding: 0;
   border-bottom: 3px solid black;
+  text-align: center;
+  padding: 1rem;
 }
 
 .bottom-bar {
@@ -23,9 +33,13 @@ header {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #333;
-  color: white;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.separator {
+  color: #555;
 }
