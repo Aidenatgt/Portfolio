@@ -1,8 +1,8 @@
 :root {
-  --header-bg: blue;
-  --header-text: red;
-  --background: red;
-  --text-color: darkblue;
+  --header-bg: #d66b0d;
+  --header-text: black;
+  --background: #5088ab;
+  --text-color: black;
   --footer-bg: lightgray;
   --footer-text: black;
 }
@@ -62,14 +62,11 @@ header {
 }
 
 .long-desc {
+  height: 0;
   font-size: 12pt;
-  overflow: hidden;
+  max-height: 40vh;
+  overflow-y: auto;
   transition: height 0.5s ease;
-}
-
-.long-desc.active {
-  max-height: 500px;
-  opacity: 1;
 }
 
 .expandable:hover {
