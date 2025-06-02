@@ -11,11 +11,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "FiraCode Nerd Font Mono", monospace;
 }
 
 body {
   background-color: var(--background);
-  font-family: "FiraCode Nerd Font Mono", monospace;
   color: var(--text-color);
 }
 
@@ -32,6 +32,13 @@ header {
   background-color: white;
   border-radius: 10px;
   margin: 15px 2% 5px 2%;
+  padding-bottom: 5px;
+  border: 3px solid black;
+}
+
+.project>img {
+  width: 20%;
+  margin: 10px;
 }
 
 .project-title {
@@ -41,9 +48,32 @@ header {
   border-bottom: 1px solid gray;
 }
 
-.project>img {
-  width: 20%;
-  padding: 5px 5px 5px 5px;
+.expandable {
+  border-radius: inherit;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 1s;
+}
+
+.short-desc {
+  font-size: 16pt;
+  padding-bottom: 5px;
+}
+
+.long-desc {
+  font-size: 12pt;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+.long-desc.active {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.expandable:hover {
+  background-color: #d0d0d0;
 }
 
 .bottom-bar {
