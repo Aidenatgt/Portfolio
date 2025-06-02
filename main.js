@@ -1,4 +1,5 @@
 import fill from "./app/fill_config.js";
+import { add_project } from "./app/add_project.js";
 console.log("script loaded");
 
 
@@ -6,6 +7,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded");
 
   fill();
+
+  await add_project("./projects/portfolio/");
 
   const test_element = document.getElementById("test");
 

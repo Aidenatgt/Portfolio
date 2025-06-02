@@ -17,6 +17,7 @@
 html,
 body {
   height: 100%;
+  overflow-y: auto;
   background-image: var(--background);
   color: var(--text-color);
   background-size: cover;
@@ -36,8 +37,8 @@ header {
   background-color: white;
   border-radius: 10px;
   margin: 15px 2% 5px 2%;
-  padding-bottom: 5px;
   border: 3px solid black;
+  padding: 3px 0 2px 5px;
 }
 
 .project>img {
