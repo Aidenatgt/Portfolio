@@ -41,3 +41,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 
+function adjustBodyPadding() {
+  const bar = document.querySelector('.bottom-bar');
+  if (!bar) return;
+  document.body.style.paddingBottom = bar.offsetHeight + 'px';
+}
+
+// Run on load and when resized
+window.addEventListener('load', adjustBodyPadding);
+window.addEventListener('resize', adjustBodyPadding);

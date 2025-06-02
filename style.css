@@ -1,7 +1,7 @@
 :root {
   --header-bg: #d66b0d;
   --header-text: black;
-  --background: #5088ab;
+  --background: linear-gradient(#5088ab, #1719a3);
   --text-color: black;
   --footer-bg: lightgray;
   --footer-text: black;
@@ -14,9 +14,13 @@
   font-family: "FiraCode Nerd Font Mono", monospace;
 }
 
+html,
 body {
-  background-color: var(--background);
+  height: 100%;
+  background-image: var(--background);
   color: var(--text-color);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -37,7 +41,7 @@ header {
 }
 
 .project>img {
-  width: 20%;
+  width: 10cm;
   margin: 10px;
 }
 
