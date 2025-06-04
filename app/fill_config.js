@@ -8,12 +8,10 @@ export default async function fill() {
       for (const format of data.formats) {
         const pattern = new RegExp(`\\{${format.key}\\}`, "g");
         element.innerHTML = element.innerHTML.replace(pattern, format.value);
-        console.log(`{${format.key}} replaced with ${format.value}`);
       }
     }
 
     const formatable = Array.from(document.getElementsByClassName("format"));
-    console.log(`${formatable.length} formatable items`);
 
     if (data.background != null)
       document.documentElement.style.background = data.background;

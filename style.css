@@ -1,7 +1,7 @@
 :root {
-  --header-bg: #d66b0d;
+  --header-bg: linear-gradient(#d66b0d, #e09238);
   --header-text: black;
-  --background: linear-gradient(#5088ab, #1719a3);
+  --background: linear-gradient(#679bf0, #072d69);
   --text-color: black;
   --footer-bg: lightgray;
   --footer-text: black;
@@ -25,7 +25,7 @@ body {
 }
 
 header {
-  background-color: var(--header-bg);
+  background-image: var(--header-bg);
   color: var(--header-text);
   width: 100%;
   border-bottom: 3px solid black;
@@ -51,9 +51,6 @@ header {
   padding: 10px 5px 3px 5px;
   margin-bottom: 10px;
   border-bottom: 1px solid gray;
-}
-
-.expandable {
   border-radius: inherit;
   padding: 10px;
   margin-bottom: 10px;
@@ -74,8 +71,38 @@ header {
   transition: height 0.5s ease;
 }
 
-.expandable:hover {
+.project-title:hover {
   background-color: #d0d0d0;
+}
+
+@media (max-width: 20cm) {
+  .project {
+    justify-content: center;
+  }
+
+  .project>img {
+    width: 70%;
+  }
+
+  .project-title {
+    background-color: blue;
+  }
+}
+
+@media (max-height: 20cm) {
+  header {
+    padding: 0.5rem;
+  }
+
+  .project-title {
+    margin-bottom: 5px;
+  }
+
+  .project>img {
+    height: 10rem;
+    width: auto;
+    margin: 7px;
+  }
 }
 
 .bottom-bar {

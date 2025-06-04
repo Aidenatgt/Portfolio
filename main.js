@@ -1,26 +1,23 @@
 import fill from "./app/fill_config.js";
-import { add_project } from "./app/add_project.js";
-console.log("script loaded");
-
+import add_all from "./app/add_project.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded");
-
+  await add_all();
   fill();
 
-  await add_project("./projects/portfolio/");
 
-  const test_element = document.getElementById("test");
-
-  const project_html = await fetch("./app/project_html.html");
-  test_element.innerHTML = await project_html.text();
-
-  document.querySelectorAll('.expandable').forEach(async el => {
+  const expandables = [...document.querySelectorAll('.project-title')];
+  console.log(`Expandable elements: ${expandables}`);
+  expandables.forEach(async el => {
+    console.log(el);
 
     el.addEventListener('click', () => {
       const group = el.dataset.group;
+      console.log(group);
       document.querySelectorAll(`.long-desc[data-group="${group}"]`)
         .forEach(detail => {
+          console.log(detail);
           const isExpanded = detail.classList.contains('expanded');
 
           if (isExpanded) {
