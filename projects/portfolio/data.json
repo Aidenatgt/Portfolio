@@ -1,5 +1,6 @@
 {
   "title": "Portfolio",
   "short": "A website to act as a project portfolio.",
-  "long": "A longer description of the project"
+  "long": "A longer description of the project",
+  "repo": "https://github.com/Aidenatgt/Portfolio"
 }

@@ -36,6 +36,8 @@ async function create_project(project_dir) {
   const heading = document.createElement("h3");
   const span = document.createElement("span");
   span.innerHTML = `<b>${project.title}</b>`
+  if (project.repo != null)
+    span.innerHTML += ` (<a href=\'${project.repo}\' target=_blank>Repo</a>)`
   heading.appendChild(span);
 
   // If the project has a long description include an image to expand the description.
