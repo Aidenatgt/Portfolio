@@ -1,5 +1,5 @@
-import fill from "./app/fill_config.js";
-import add_all from "./app/add_project.js";
+import fill from "./fill_config.js";
+import add_all from "./add_project.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM fully loaded");
