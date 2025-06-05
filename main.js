@@ -7,38 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   fill();
 
 
-  const expandables = [...document.querySelectorAll('.project-title')];
-  console.log(`Expandable elements: ${expandables}`);
-  expandables.forEach(async el => {
-    console.log(el);
-
-    el.addEventListener('click', () => {
-      const group = el.dataset.group;
-      console.log(group);
-      document.querySelectorAll(`.long-desc[data-group="${group}"]`)
-        .forEach(detail => {
-          console.log(detail);
-          const isExpanded = detail.classList.contains('expanded');
-
-          if (isExpanded) {
-            detail.style.height = detail.scrollHeight + "px";
-
-            requestAnimationFrame(() => {
-              detail.style.height = "0px";
-              detail.classList.remove("expanded");
-            });
-          } else {
-            detail.style.height = detail.scrollHeight + "px";
-            detail.classList.add("expanded");
-
-            detail.addEventListener("transitioned", function tidy() {
-              detail.style.height = "auto";
-              detail.removeEventListener("transitioned", tidy);
-            })
-          }
-        });
-    });
-  });
 });
 
 function adjustBodyPadding() {

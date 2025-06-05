@@ -38,7 +38,7 @@ header {
   border-radius: 10px;
   margin: 15px 2% 5px 2%;
   border: 3px solid black;
-  padding: 3px 0 2px 5px;
+  padding: 3px 3px 3px 3px;
 }
 
 .project>img {
@@ -46,16 +46,35 @@ header {
   margin: 10px;
 }
 
+.project-title>h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expand {
+  height: 30px;
+  border: 1px solid gray;
+  border-bottom: 3px solid gray;
+  border-radius: 7px;
+  padding: 3px;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .expand:hover {
+    background-color: gra;
+  }
+}
+
 .project-title {
   font-size: 18pt;
   padding: 10px 5px 3px 5px;
   margin-bottom: 10px;
-  border-bottom: 1px solid gray;
-  border-radius: inherit;
-  padding: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: background 1s;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: 4px solid gray;
 }
 
 .short-desc {
@@ -69,10 +88,6 @@ header {
   max-height: 40vh;
   overflow-y: auto;
   transition: height 0.5s ease;
-}
-
-.project-title:hover {
-  background-color: #d0d0d0;
 }
 
 @media (max-width: 20cm) {
