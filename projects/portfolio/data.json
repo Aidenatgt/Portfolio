@@ -2,5 +2,6 @@
   "title": "Portfolio",
   "short": "A website to act as a project portfolio.",
   "long": "A longer description of the project",
+  "image": "ArchDemo.png",
   "repo": "https://github.com/Aidenatgt/Portfolio"
 }

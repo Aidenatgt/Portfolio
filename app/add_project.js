@@ -5,16 +5,28 @@ export default async function add_all() {
   // Read the registry to get a list of project directories.
   const registry = await (await fetch("projects/registry.json")).json();
 
+  const ordered = await (await fetch("config.json")).json().ordered;
+
   // Find the place for the projects in the document, and then add each one to it.
   // Bonus: mapping them all to promises instead of awaiting them in the iteration means this will run them concurrently. 
   const content_div = document.getElementById("content-div");
-  const promises = [...registry].map(async dir => {
-    const div = await create_project(`projects/${dir}`);
-    content_div.appendChild(div);
-  });
 
-  // await each promise to make sure they actually get added to the document.
-  await Promise.all(promises);
+  if (ordered) {
+    const promises = [...registry].map(async dir => {
+      const div = await create_project(`projects/${dir}`);
+      content_div.appendChild(div);
+    });
+
+    // await each promise to make sure they actually get added to the document.
+    await Promise.all(promises);
+
+    // If the config specifies order matters then this can't be done concurrently.
+  } else {
+    for (const dir of registry) {
+      const div = await create_project(`projects/${dir}`);
+      content_div.appendChild(div);
+    }
+  }
 }
 
 /**
@@ -98,7 +110,7 @@ async function create_project(project_dir) {
   // If the project has an image include it below the title.
   if (project.image != null) {
     const image = document.createElement("img");
-    image.src = `assets/${project.image}`;
+    image.src = `${project_dir}/${project.image}`;
     image.alt = project.image_desc;
 
     project_div.appendChild(image);
